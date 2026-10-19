@@ -1,0 +1,429 @@
+
+/* =========================================
+   COGNIFYZ - LEVEL 1 TASK 2
+   Professional JavaScript Playground
+========================================= */
+
+/* Reset default browser spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global color variables */
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --navy: #0f172a;
+    --text: #334155;
+    --muted: #64748b;
+    --background: #f5f8ff;
+    --white: #ffffff;
+    --border: #e2e8f0;
+}
+
+/* General body styling */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Common container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.logo-dot {
+    color: var(--primary);
+}
+
+.internship-badge {
+    background: #eff6ff;
+    color: var(--primary);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero {
+    padding: 75px 0 55px;
+    text-align: center;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--primary);
+    background: #dbeafe;
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: var(--muted);
+}
+
+/* =========================================
+   TASK CARDS
+========================================= */
+
+.task-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding-bottom: 80px;
+}
+
+.task-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.task-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(37, 99, 235, 0.10);
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.task-number {
+    font-size: 28px;
+    font-weight: 800;
+    color: #cbd5e1;
+}
+
+.tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    background: #eff6ff;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+.task-card h2 {
+    color: var(--navy);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.description {
+    font-size: 14px;
+    color: var(--muted);
+    min-height: 68px;
+}
+
+/* =========================================
+   DEMO AREAS
+========================================= */
+
+.demo-area {
+    background: #f8faff;
+    border: 1px dashed #cbd5e1;
+    border-radius: 15px;
+    padding: 24px 18px;
+    margin: 24px 0;
+    min-height: 245px;
+}
+
+.color-demo,
+.greeting-demo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* =========================================
+   TASK 1 - COLOR CHANGER
+========================================= */
+
+.color-button {
+    border: none;
+    background: #2563eb;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.color-button:hover {
+    transform: scale(1.04);
+}
+
+.color-label {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+#colorCode {
+    font-weight: 700;
+    color: var(--navy);
+}
+
+/* =========================================
+   COMMON BUTTON
+========================================= */
+
+.primary-button {
+    border: none;
+    background: var(--primary);
+    color: white;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+}
+
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   TASK 2 - GREETING
+========================================= */
+
+.clock-icon {
+    font-size: 45px;
+    color: var(--primary);
+}
+
+.time-text {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.greeting-text {
+    color: var(--primary);
+    font-weight: 700;
+    text-align: center;
+    min-height: 22px;
+}
+
+/* =========================================
+   TASK 3 - CALCULATOR
+========================================= */
+
+.calculator-demo {
+    min-height: 245px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.input-group label {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+}
+
+.input-group input:focus {
+    border-color: var(--primary);
+}
+
+.plus-sign {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 6px 0;
+}
+
+.calculate-button {
+    width: 100%;
+    margin-top: 16px;
+}
+
+.result-box {
+    margin-top: 18px;
+    background: #dbeafe;
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result-box span {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--primary);
+}
+
+.result-box strong {
+    display: block;
+    font-size: 28px;
+    color: var(--navy);
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.card-footer {
+    margin-top: auto;
+    border-top: 1px solid var(--border);
+    padding-top: 18px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: var(--navy);
+    color: #cbd5e1;
+    text-align: center;
+    padding: 30px 15px;
+    font-size: 13px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* Tablet screens */
+@media (max-width: 1000px) {
+    .task-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 650px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero {
+        padding: 50px 0 35px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .task-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .task-card {
+        padding: 22px;
+    }
+
+    .description {
+        min-height: auto;
+    }
+
+    .demo-area {
+        min-height: 220px;
+    }
+}

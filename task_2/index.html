@@ -1,0 +1,404 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Make website responsive on all devices -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Responsive web design project for Cognifyz Technologies internship.">
+
+    <title>Cognifyz | Responsive Web Design</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==========================
+         HEADER AND NAVIGATION
+    =========================== -->
+
+    <header class="header">
+
+        <nav class="navbar container"
+             aria-label="Main navigation">
+
+            <!-- Website Logo -->
+            <a href="#home" class="logo">
+                <span class="logo-icon">C</span>
+                Cognifyz<span class="logo-dot">.</span>
+            </a>
+
+            <!-- Checkbox controls mobile menu -->
+            <input
+                type="checkbox"
+                id="menu-toggle"
+                class="menu-toggle"
+                aria-label="Toggle navigation menu"
+            >
+
+            <!-- Hamburger menu icon -->
+            <label for="menu-toggle"
+                   class="hamburger"
+                   aria-label="Toggle navigation">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </label>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#services">Services</a>
+                </li>
+
+                <li>
+                    <a href="#contact" class="nav-button">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==========================
+         HERO SECTION
+    =========================== -->
+
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="container hero-grid">
+
+                <!-- Left Content -->
+                <div class="hero-content">
+
+                    <span class="badge">
+                        LEVEL 02 / TASK 02
+                    </span>
+
+                    <h1>
+                        Build Websites That
+                        <span>Look Great Everywhere.</span>
+                    </h1>
+
+                    <p>
+                        Discover the power of responsive
+                        web design. Create modern websites
+                        that adapt beautifully to mobile,
+                        tablet, and desktop screens.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#services"
+                           class="primary-btn">
+                            Explore Features →
+                        </a>
+
+                        <a href="#about"
+                           class="secondary-btn">
+                            Learn More
+                        </a>
+
+                    </div>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong>100%</strong>
+                            <span>Responsive</span>
+                        </div>
+
+                        <div>
+                            <strong>3</strong>
+                            <span>Screen Sizes</span>
+                        </div>
+
+                        <div>
+                            <strong>CSS</strong>
+                            <span>Media Queries</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Right Side Illustration -->
+                <div class="hero-visual">
+
+                    <div class="visual-card">
+
+                        <div class="browser-bar">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+
+                        <div class="browser-content">
+
+                            <div class="mock-header"></div>
+
+                            <div class="mock-title"></div>
+
+                            <div class="mock-text"></div>
+                            <div class="mock-text short"></div>
+
+                            <div class="mock-grid">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="floating-label">
+                        ✓ Mobile Friendly
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             ABOUT SECTION
+        =========================== -->
+
+        <section id="about" class="about section">
+
+            <div class="container about-grid">
+
+                <div class="about-visual">
+
+                    <div class="device desktop">
+                        <div class="device-screen">
+                            <div class="screen-header"></div>
+                            <div class="screen-block"></div>
+                            <div class="screen-block small"></div>
+                        </div>
+                    </div>
+
+                    <div class="device mobile">
+                        <div class="device-screen">
+                            <div class="screen-header"></div>
+                            <div class="screen-block"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="about-content">
+
+                    <span class="section-label">
+                        ABOUT RESPONSIVE DESIGN
+                    </span>
+
+                    <h2>
+                        One Website.
+                        <span>Every Screen.</span>
+                    </h2>
+
+                    <p>
+                        Responsive web design ensures that
+                        websites automatically adjust their
+                        layout according to screen size.
+                    </p>
+
+                    <p>
+                        Using CSS media queries, flexible
+                        grids, and responsive navigation,
+                        we can create a consistent user
+                        experience across devices.
+                    </p>
+
+                    <a href="#services"
+                       class="primary-btn">
+                        Discover Features →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             SERVICES SECTION
+        =========================== -->
+
+        <section id="services" class="services section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        CORE FEATURES
+                    </span>
+
+                    <h2>Designed for Every Device</h2>
+
+                    <p>
+                        Three essential features that make
+                        a modern website responsive.
+                    </p>
+
+                </div>
+
+                <div class="services-grid">
+
+                    <!-- Card 1 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">▦</div>
+
+                        <h3>Flexible Layout</h3>
+
+                        <p>
+                            CSS Grid and Flexbox help
+                            create layouts that adapt
+                            to different screen widths.
+                        </p>
+
+                        <span>CSS Grid & Flexbox →</span>
+
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">◫</div>
+
+                        <h3>Media Queries</h3>
+
+                        <p>
+                            CSS media queries apply
+                            different styles based on
+                            the device screen size.
+                        </p>
+
+                        <span>Responsive Breakpoints →</span>
+
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="service-card">
+
+                        <div class="service-icon">☰</div>
+
+                        <h3>Mobile Navigation</h3>
+
+                        <p>
+                            A hamburger menu keeps
+                            navigation simple and
+                            accessible on small screens.
+                        </p>
+
+                        <span>CSS-only Hamburger →</span>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==========================
+             CONTACT SECTION
+        =========================== -->
+
+        <section id="contact" class="contact section">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <span class="section-label">
+                        GET IN TOUCH
+                    </span>
+
+                    <h2>Ready to Build Something Great?</h2>
+
+                    <p>
+                        Explore modern web development
+                        and responsive design with
+                        Cognifyz Technologies.
+                    </p>
+
+                    <a href="mailto:contact@cognifyz.com"
+                       class="primary-btn">
+                        Contact Cognifyz →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==========================
+         FOOTER
+    =========================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <h3>Cognifyz<span>.</span></h3>
+                <p>Where Data Meets Intelligence</p>
+            </div>
+
+            <div>
+                <p>Web Development Internship</p>
+                <p>Level 2 – Task 2</p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                Responsive Design Project |
+                HTML & CSS
+            </p>
+        </div>
+
+    </footer>
+
+</body>
+</html>

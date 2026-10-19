@@ -1,0 +1,601 @@
+
+/* ==========================================
+   COGNIFYZ TECHNOLOGIES
+   LEVEL 3 - TASK 1
+   IMAGE GALLERY AND SLIDESHOW
+========================================== */
+
+/* Global Variables */
+:root {
+    --primary: #2563eb;
+    --navy: #0f172a;
+    --text: #475569;
+    --muted: #64748b;
+    --light: #f5f8ff;
+    --white: #ffffff;
+    --border: #e2e8f0;
+}
+
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: white;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.header {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--navy);
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--primary);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo span:last-child,
+.footer h3 span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #eff6ff,
+        #ffffff,
+        #dbeafe
+    );
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: var(--primary);
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    color: var(--navy);
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+}
+
+.primary-btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 14px 26px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 15px;
+}
+
+.section-heading p {
+    max-width: 550px;
+    margin: auto;
+}
+
+/* ==========================================
+   IMAGE GALLERY
+========================================== */
+
+.gallery-section {
+    padding: 95px 0;
+    scroll-margin-top: 90px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.gallery-item {
+    position: relative;
+    height: 270px;
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+    background: #dbeafe;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.image-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 25px;
+    color: white;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.75)
+    );
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover .image-overlay,
+.gallery-item:focus-visible .image-overlay {
+    opacity: 1;
+}
+
+.image-overlay h3 {
+    font-size: 19px;
+    margin-bottom: 5px;
+}
+
+.image-overlay span {
+    font-size: 13px;
+}
+
+/* ==========================================
+   CSS-ONLY IMAGE LIGHTBOX
+========================================== */
+
+/* Hide lightbox by default */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.95);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 70px 25px 25px;
+    z-index: 2000;
+}
+
+/* Display selected image using :target */
+.lightbox:target {
+    display: flex;
+}
+
+/* Enlarged image styling */
+.lightbox img {
+    max-width: 95%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* Close button */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 42px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: #93c5fd;
+}
+
+/* ==========================================
+   AUTOMATIC SLIDESHOW
+========================================== */
+
+.slideshow-section {
+    background: var(--light);
+    padding: 95px 0;
+    scroll-margin-top: 90px;
+}
+
+.slideshow {
+    position: relative;
+    height: 520px;
+    border-radius: 22px;
+    overflow: hidden;
+    background: var(--navy);
+    box-shadow: 0 20px 55px rgba(15, 23, 42, 0.15);
+}
+
+/* Each slide covers the slideshow container */
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: slideshowFade 20s infinite;
+}
+
+/* Images fill each slide */
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark gradient improves text readability */
+.slide::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        transparent 35%,
+        rgba(0, 0, 0, 0.75)
+    );
+}
+
+/* Each slide starts 5 seconds after the previous one */
+.slide-1 {
+    animation-delay: 0s;
+}
+
+.slide-2 {
+    animation-delay: 5s;
+}
+
+.slide-3 {
+    animation-delay: 10s;
+}
+
+.slide-4 {
+    animation-delay: 15s;
+}
+
+/* Slideshow caption */
+.slide-caption {
+    position: absolute;
+    left: 50px;
+    bottom: 45px;
+    z-index: 2;
+    color: white;
+}
+
+.slide-caption span {
+    display: inline-block;
+    color: #bfdbfe;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.slide-caption h3 {
+    font-size: clamp(24px, 4vw, 38px);
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.slide-caption p {
+    font-size: 15px;
+    color: #e2e8f0;
+}
+
+/* Fade in, remain visible, then fade out */
+@keyframes slideshowFade {
+
+    0% {
+        opacity: 0;
+    }
+
+    3% {
+        opacity: 1;
+    }
+
+    22% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Slideshow information */
+.slideshow-note {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+.footer {
+    background: var(--navy);
+    color: #cbd5e1;
+    padding-top: 55px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer h3 {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #334155;
+    font-size: 12px;
+}
+
+/* ==========================================
+   TABLET RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 992px) {
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .slideshow {
+        height: 430px;
+    }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        padding: 15px 0;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .gallery-section,
+    .slideshow-section {
+        padding: 65px 0;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    .slideshow {
+        height: 350px;
+    }
+
+    .slide-caption {
+        left: 22px;
+        right: 22px;
+        bottom: 25px;
+    }
+
+    .slide-caption h3 {
+        font-size: 24px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lightbox-close {
+        right: 20px;
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .gallery-item img,
+    .primary-btn {
+        transition: none;
+    }
+
+    .slide {
+        animation: none;
+    }
+
+    .slide-1 {
+        opacity: 1;
+    }
+}
+
+/* Improve the automatic slideshow timing */
+
+/* Keep the first slide visible as the initial background */
+.slideshow {
+    background-image: url(
+        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=1600&auto=format&fit=crop"
+    );
+    background-size: cover;
+    background-position: center;
+}
+
+/* Start each slide at its visible phase */
+@keyframes slideshowFade {
+    0% {
+        opacity: 1;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    95% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

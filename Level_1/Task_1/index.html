@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive HTML and CSS project for Cognifyz Web Development Internship Level 1 Task 1.">
+  <title>Web Development | Cognifyz Internship Task 1</title>
+  <!-- Link the external stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Three-link navigation menu -->
+  <header class="site-header">
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Cognifyz home"><span class="brand-icon">&lt;/&gt;</span> Cognifyz<span class="brand-dot">.</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Heading, paragraph, and image: first PDF requirement -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> WEB DEVELOPMENT INTERNSHIP</span>
+          <h1 id="hero-title">Build the web.<br><span class="gradient-text">Shape the future.</span></h1>
+          <p class="hero-description">Explore the foundations of modern web development with HTML and CSS. This project brings together a clean webpage, a simple form, and intuitive navigation.</p>
+          <a class="button primary-button" href="#about">Explore Project <span aria-hidden="true">↗</span></a>
+          <div class="hero-footnote"><span class="footnote-line"></span> LEVEL 01 <span class="footnote-divider">/</span> TASK 01</div>
+        </div>
+        <div class="hero-visual">
+          <!-- Local SVG image, included in this project -->
+          <img src="developer.svg" alt="Illustration of a web development editor with HTML and CSS code" width="620" height="480">
+        </div>
+      </div>
+    </section>
+
+    <!-- About section, targeted by the navigation -->
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <p class="section-label">WHAT'S INSIDE</p>
+        <h2 id="about-title">Small project. Essential skills.</h2>
+        <p class="section-intro">A focused introduction to the building blocks of a great website.</p>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-number">01</span><span class="feature-icon" aria-hidden="true">⌘</span><h3>HTML Structure</h3><p>Semantic headings, paragraphs, images, and organized sections.</p></article>
+          <article class="feature-card"><span class="feature-number">02</span><span class="feature-icon" aria-hidden="true">◈</span><h3>CSS Styling</h3><p>Modern typography, colors, spacing, and responsive layouts.</p></article>
+          <article class="feature-card"><span class="feature-number">03</span><span class="feature-icon" aria-hidden="true">↗</span><h3>Easy Navigation</h3><p>Three clear links that smoothly jump to page sections.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Basic form with exactly one input and one submit button -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div><p class="section-label light-label">GET IN TOUCH</p><h2 id="contact-title">Let's stay<br>connected.</h2><p>Try the simple email form built for this internship task.</p></div>
+        <div class="form-card">
+          <form id="email-form">
+            <label for="email">Your email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <button type="submit" class="button form-button">Submit Email <span aria-hidden="true">→</span></button>
+            <p class="form-note" id="form-status" role="status" aria-live="polite">Demo form — no information is sent or stored.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-content"><span class="footer-brand">Cognifyz<span class="brand-dot">.</span></span><span>Web Development Internship · Level 1 / Task 1</span><a href="#home">Back to top ↑</a></div></footer>
+
+  <!-- Demo-only behavior; HTML and CSS are the core of this task -->
+  <script>
+    const emailForm = document.getElementById('email-form');
+    const formStatus = document.getElementById('form-status');
+    emailForm.addEventListener('submit', function (event) {
+      event.preventDefault(); // Keep the demo on this page; no backend exists.
+      formStatus.textContent = 'Form validated successfully! This is a frontend demo; your email was not sent.';
+      formStatus.classList.add('success');
+      emailForm.reset();
+    });
+  </script>
+</body>
+</html>
